@@ -481,16 +481,165 @@ body:has(#card_skills:hover) {
     
 }
 
+@keyframes ani_cnt_carrousel_front {
+    0%,50%{
+        transform: rotateY(0deg);
+    }
+    60%,90% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+@keyframes ani_cnt_carrousel_back {
+    0%,50%{
+        transform: rotateY(180deg);
+    }
+    60%,90% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+.news_zone {
+    border-radius: 50px;
+    & .cnt_carrousel_front {
+        animation: ani_cnt_carrousel_front 9s ease-in-out infinite;
+        
+    }
+    & .cnt_carrousel_back {
+        animation: ani_cnt_carrousel_back 9s ease-in-out infinite;
+    }
+}
 .cnt_carrousel {
-    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    aspect-ratio: 1/1;
     overflow: hidden;
-    max-height: 30vh;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    transition: transform 0.6s;
+    
+    &:hover {
+        & .cnt_carrousel_front, .cnt_carrousel_back {
+            animation-play-state: paused;
+        }
+    }
+    & article {
+        backface-visibility: hidden;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & .cnt_carrousel_main {
+            width: 90%;
+            height: 90%;
+            background-color: aliceblue;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            & .cnt_carrousel_img {
+                position: absolute;
+                width: 95%;
+                height: 52%;
+                top: 5%;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+            & .cnt_carrousel_info {
+                position: absolute;
+                width: 95%;
+                height: 50%;
+                bottom: 5%;
+                transition: all 0.5s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                border-radius: 5px 5px 0 0 ;
+                &:hover {
+                    height: 70%;
+                    transition: all 0.5s ease-in-out;
+                    background-color: #dcdcdd;
+                    & .cnt_carrousel_readmore {
+                        height: 40px;
+                        padding: 10px ;
+                        transition: all 0.3s ease-in-out;
+                    }
+                    & .cnt_carrousel_body h3 {
+                        max-height: 70%;
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                }
+                & .cnt_carrousel_body {
+                    padding: 10px 0px 10px 0px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    overflow: block;
+                    max-height: 70%;
+                    & h3 {
+                        overflow: hidden;
+                        max-height: 100%;
+                        text-overflow: ellipsis;
+                    }
+                }
+                & .cnt_carrousel_readmore{
+                    height: 0px;
+                    width: 100px;
+                    overflow: hidden;
+                    transition: all 0.3s ease-in-out;
+                    text-align: center;
+                    background-color: #1985a1;
+                    color: white;
+                    border-radius: 5px;
+                    &:hover {
+                        background-color: #4c5c68;
+                    }
+                }
+                & .cnt_carrousel_catg {
+                    border-radius: 5px;
+                    background-color: tomato;
+                    color: white;
+                    padding: 5px;
+                }
+                & .cnt_carrousel_date {
+                    background-color: #dcdcdd;
+                    padding: 3px;
+                    border-radius: 3px;
+                }
+
+            }
+        }
+    }
     & article {
         height: 100%;
         width: 100%;
     }
+}
+
+.news_articles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10%;
+    overflow: hidden;
+    & article {
+        min-height: 300px;
+    }
+
 }
 @keyframes slide {
     0%, 100% { transform: translateX(0); }

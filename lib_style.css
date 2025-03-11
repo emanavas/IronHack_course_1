@@ -34,6 +34,13 @@
     display: flex;
     flex-direction: column;
 }
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.d-justify-center {
+    justify-content: center;
+}
 /* grid */
 
 /* paddings */
@@ -49,6 +56,9 @@
 .text-center {
     text-align: center;
 }
+.text-r{
+    text-align: right;
+}
 .font-2 {
     font-size: 2rem;
 }
@@ -63,6 +73,7 @@
     color: white;
 }
 
+
 /* Tranformation general*/
 .transform-img-color:hover {
     scale: 1.2;
@@ -70,4 +81,7 @@
     box-shadow: 0 0 30px 5px gray;
     transition: all 0.3s ease ;
     border-radius: 5px;
+}
+.enabled_transition_03 > .transform-img-color {
+    transition: all 0.3s ease ;
 }
