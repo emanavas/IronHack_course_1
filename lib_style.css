@@ -76,8 +76,8 @@
 
 /* Tranformation general*/
 .transform-img-color:hover {
-    scale: 1.2;
-    filter: saturate(2) contrast(1.2);
+    scale: 1.1;
+    filter: hue-rotate(90deg);
     box-shadow: 0 0 30px 5px gray;
     transition: all 0.3s ease ;
     border-radius: 5px;
