@@ -41,6 +41,10 @@
 .d-justify-center {
     justify-content: center;
 }
+
+.d-align-center {
+    align-items: center;
+}
 /* grid */
 
 /* paddings */
