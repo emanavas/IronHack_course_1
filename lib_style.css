@@ -3,8 +3,14 @@
 .w-100 {
     width: 100%;
 }
+.h-hv-10 {
+    height: 10vh;
+}
 .h-hv-30 {
     height: 30vh;
+}
+.h-hv-100 {
+    height: 100vh;
 }
 .h-100 {
     height: 100%;

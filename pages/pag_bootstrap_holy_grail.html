@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./../style.css">
+    <link rel="stylesheet" type="text/css" href="./../lib_style.css">
+
+    <!-- Add favicon--> 
+    <link rel="icon" type="image/x-icon" href="./../assets/favicon.ico">
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+
+    <nav class="cnt_nav">
+        <input id="toggle_menu" type="checkbox">
+        <div class="burger_lines">
+            <label id="menu" for ="toggle_menu">
+                <div class="menu_btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </label>    
+        </div>
+        
+        <div class="menu_content">
+            <div class="menu_items">
+                <div class="menu_item">
+                    <a href="./../index.html">Home</a>
+                </div>
+                <div class="menu_item">
+                    <a href="./pag2.html">Info</a>
+                </div>
+                <div class="menu_item">
+                    <a href="./pag3.html">Career</a>
+                </div>
+                <div class="menu_item">
+                    <a href="./pag4.html">About me</a>
+                </div>
+                <div>
+                    <ul>
+                        <div class="menu_item_title">Trainnig lab IronHack</div>
+                        <li class="menu_item"><a href="./pag_noticiero.html">web news</a></li>
+                        <li class="menu_item"><a href="./pag_game_boom_hover.html">Game Boom hover</a></li>
+                        <li class="menu_item"><a href="./pag_fav_character.html">Favorite character</a></li>
+                        <li class="menu_item"><a href="./pag_bootstrap_holy_grail.html">Bootstrap Holy Grail</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class=" ">
+        <h1 class="text-center padding-30 color-white">Bootstrap Holy Grail</h1>
+        
+        <div class="cnt_main_general">
+            
+
+
+              <div class="container text-center">
+                <div class="row h-hv-10">
+                    <div class="col-md-12">
+
+                        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                            <div class="container-fluid">
+                              <a class="navbar-brand" href="#">Navbar</a>
+                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                              </button>
+                              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                  <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                  </li>
+                                  <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Dropdown
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">Action</a></li>
+                                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                                      <li><hr class="dropdown-divider"></li>
+                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                  </li>
+                                </ul>
+                                <form class="d-flex" role="search">
+                                  <input class="form-control me-2 w-50" type="search" placeholder="Search" aria-label="Search">
+                                  <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                              </div>
+                            </div>
+                          </nav>
+
+                    </div>
+                </div>
+
+                <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                <!--Main container-->
+                <div class="row">
+                    <!--sidebar left-->
+                    <div class="col-2 col-md-2">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                  Accordion Item #1
+                                </button>
+                              </h2>
+                              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                  Accordion Item #2
+                                </button>
+                              </h2>
+                              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                  Accordion Item #3
+                                </button>
+                              </h2>
+                              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                    </div>
+                    <div class="col-8 col-md-8 ">
+                        <!--central content-->
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="./../media/article1_1.jpeg" class="fit_img d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./../media/article1_2.jpeg" class="fit_img d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./../media/article1_3.jpeg" class="fit_img d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="padding-10">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eveniet amet accusantium, nemo, omnis nobis cum deserunt, repellat corrupti facere saepe aliquam eligendi eos nisi ipsa. Quia ut in tempore hic enim quod dolores. Voluptatum, facilis atque. Explicabo aperiam unde, beatae sit porro sunt assumenda aliquam, itaque fugiat hic expedita optio, tempore sequi vel accusantium. Provident vitae veritatis temporibus accusamus perspiciatis adipisci asperiores facilis voluptatibus numquam dignissimos ullam nulla dolorum, omnis laboriosam aliquid! Autem natus cum aliquam voluptatibus animi eos voluptatum, commodi quam quae dolore, placeat blanditiis minus et possimus aspernatur asperiores inventore porro corrupti. Commodi sunt ea delectus eum beatae facilis distinctio inventore omnis aliquid temporibus, tempora possimus? Quae veritatis iure explicabo placeat totam ullam quidem sit earum optio! Aliquam autem quasi nam. Saepe dicta omnis non, placeat quod libero molestias beatae ad dignissimos hic et quidem, molestiae repellendus ipsam obcaecati itaque mollitia officia error, ipsa quam tenetur ducimus accusantium. Molestias, deleniti facere ab laudantium, modi id voluptatibus beatae ut error sequi omnis nobis voluptatum dolorem, veniam iusto. Dolor dignissimos exercitationem dolores reiciendis quod repellat, nam quidem fuga dolorem, praesentium vel assumenda, ex esse impedit reprehenderit libero possimus adipisci id repudiandae mollitia? Voluptatibus saepe numquam ducimus eveniet veritatis repellendus.
+                        </div>
+                        
+                    </div>
+                    <div class="col-2 col-md-2">
+                        <!--rigth sidebar-->
+                        <ul class="list-group">
+                            <li class="list-group-item active" aria-current="true">An active item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                            <li class="list-group-item">A fourth item</li>
+                            <li class="list-group-item">And a fifth one</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--footer-->
+                <div class="row bg-body-secondary h-hv-10 rounded-2">
+                    <div class="col-4">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-border text-info" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                          </div>
+                    </div>
+                    <div class="col-4 padding-10 d-flex d-justify-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                          </nav>
+
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-primary" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                            <span class="visually-hidden" role="status">Loading...</span>
+                          </button>
+                          <button class="btn btn-primary" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                            <span role="status">Loading...</span>
+                          </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        
+        
+    </main>
+    
+    <animated_bg>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </animated_bg>
+
+</body>
+</html>

@@ -37,6 +37,10 @@ a {
         left: 1rem;
         background-color: gray;
         border-radius: 50%;
+        & label {
+            height: 100%;
+            width: 100%;
+        }
         & .menu_btn {
             cursor: pointer;
             width: 3rem;
@@ -833,6 +837,7 @@ body:has(#card_skills:hover) {
         height: 456px;
         border-radius: 10px;
         transition: all 0.3s ease-in-out;
+        transform: rotate( calc(var(--id) * 2deg) );
         &:hover {
             cursor: pointer;
             z-index: 10;
@@ -933,4 +938,11 @@ body:has(#card_skills:hover) {
         
     }
     
+}
+
+/* -------- PAGE Bootstrap  --------- */
+
+.carousel-item .fit_img {
+    aspect-ratio: 1/0.7;
+    object-fit: cover;
 }
