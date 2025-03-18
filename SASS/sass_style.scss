@@ -1,0 +1,9 @@
+
+
+@mixin gen_sass_bg ( $gb_color: black) {
+    background-color: $gb_color;
+}
+
+.sass_bg {
+    @include gen_sass_bg(rgb(177, 143, 223));
+}
