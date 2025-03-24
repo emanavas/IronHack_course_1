@@ -4,6 +4,12 @@
 .w-100 {
     width: 100%;
 }
+.w-90 {
+    width: 90%;
+}
+.w-80 {
+    width: 80%;
+}
 .h-hv-10 {
     height: 10vh;
 }
@@ -88,11 +94,96 @@
 /* Tranformation general*/
 .transform-img-color:hover {
     scale: 1.1;
-    filter: hue-rotate(90deg);
-    box-shadow: 0 0 30px 5px gray;
+    filter: hue-rotate(30deg);
     transition: all 0.3s ease ;
-    border-radius: 5px;
 }
 .enabled_transition_03 > .transform-img-color {
     transition: all 0.3s ease ;
+}
+
+/* animations */
+
+@keyframes revealing_right {
+    from {
+        color: gray;
+        transform: translateX(100vw);
+        filter: blur(30px);
+        opacity: 0.5;
+    }
+    to {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.ani_scroll_in-right {
+    animation: revealing_right;
+    animation-timeline: view(block);
+    animation-duration: 1s;
+    animation-range: cover 0% cover 40%;
+}
+
+@keyframes revealing_left {
+    from {
+        color: gray;
+        transform: translateX(-100vw);
+        filter: blur(30px);
+        opacity: 0.5;
+    }
+    to {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.ani_scroll_in-left {
+    animation: revealing_left;
+    animation-timeline: view(block);
+    animation-duration: 1s;
+    animation-range: cover 0% cover 40%;
+}
+
+
+@keyframes revealing_fadein {
+    from {
+        color: gray;
+        transform: scale(0);
+        filter: blur(30px);
+        opacity: 0.5;
+    }
+    to {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.ani_scroll_fadein {
+    animation: revealing_fadein;
+    animation-timeline: view(block);
+    animation-duration: 1s;
+    animation-range: cover 0% cover 40%;
+}
+
+
+@keyframes revealing_fadein_bounce {
+    0% {
+        color: gray;
+        transform: scale(0);
+        filter: blur(30px);
+        opacity: 0.5;
+    }
+    80% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+    90% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.ani_scroll_fadein_bounce {
+    animation: revealing_fadein_bounce;
+    animation-timeline: view(block);
+    animation-duration: 1s;
+    animation-range: cover 0% cover 40%;
 }
