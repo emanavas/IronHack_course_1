@@ -87,7 +87,8 @@ a {
         top: 0;
         left: 0;
         height: 100vh;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: auto;
         width: 100vw;
         position: absolute;
         transform:  translateX(-100vw);

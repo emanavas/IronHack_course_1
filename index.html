@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <script src="/js/partials.js" type="module"></script>
+    <script src="/js/partials.js"></script>
 </head>
 <body>
     
@@ -93,8 +93,8 @@
     
     <script >
         window.onload = () => {
-            load_main_navbar();
-            generate_script_pages();
+            load_into_id("navbar_content", "/partials/nav_main.html");
+            generate_script_pages()
         }
     </script>
 
