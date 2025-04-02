@@ -14,7 +14,7 @@ function getFilesInFolder(url, folderPath , filter = ".html") {
             let list = el.querySelector("#files")
             let arr = [];
             for (let i = 1; i < list.children.length; i++) {
-                const res = list.children[i].querySelectorAll(".name")[0].innerHTML;
+                const res = list.children[i][0].innerHTML;
                 if( res.endsWith(filter)){
                     arr.push( folderPath+res ) ;
                 } 
@@ -56,7 +56,7 @@ function load_main_navbar (){
 }
 
 function generate_script_pages() {
-    getFilesInFolder("", "/pages/js_labs/").then((res_list) => {
+    getFilesInFolder("http://127.0.0.1:5500/", "/pages/js_labs/").then((res_list) => {
         console.log(res_list)
     });
 }

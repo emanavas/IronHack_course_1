@@ -1,6 +1,9 @@
 
 @import url(./sass_style.css);
 
+.w-wv-100 {
+    width: 100vw;
+}
 .w-100 {
     width: 100%;
 }
@@ -25,10 +28,24 @@
 .h-90 {
     height: 90%;
 }
+.gap-2rem {
+    gap: 2rem;
+}
+
+.rat-1 {
+    aspect-ratio: 1/1;
+}
+.rat-16-9 {
+    aspect-ratio: 16/9;
+}
 /* flex */
 .split_row {
     display: flex;
     flex-direction: row;
+}
+.split_col {
+    display: flex;
+    flex-direction: column;
 }
 .w-grow {
     flex-grow: 1;
@@ -42,10 +59,6 @@
 }
 .w-grow-3 {
     flex-grow: 3;
-}
-.split_col {
-    display: flex;
-    flex-direction: column;
 }
 .d-flex {
     display: flex;
@@ -68,6 +81,15 @@
     padding: 30px;
 }
 
+/* Image formats*/
+.img-fit {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+.mask-border-1{
+    mask-image: linear-gradient(black 90%, transparent);
+}
 
 /* TEXT uses*/
 .text-center {
@@ -77,19 +99,52 @@
     text-align: right;
 }
 .font-2 {
-    font-size: 2rem;
+    font-size: clamp(.75rem,3vw, 2rem);
 }
 .font-3 {
-    font-size: 3rem;
+    font-size: clamp(1rem,5vw, 2.5rem);
+}
+.font-4 {
+    font-size: clamp(1.5rem,10vw, 2.5rem);
+}
+.font-5 {
+    font-size: clamp(1.7rem,10vw, 5rem);
 }
 .font-bold {
     font-weight: bold;
 }
 
+
+
 .color-white {
     color: white;
 }
+.color-gold {
+    color: goldenrod;
+}
+.color-glass {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+}
 
+/* effects background*/
+.bg-glass-dark {
+    background-color: rgba(255, 255, 255, 0.05);
+    background: hsla(0, 1%, 17%, 0.911);
+    border: 1px solid rgba(3, 3, 3, 0.836);
+    border-right-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1);
+}
+
+.bg-glass {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(116, 110, 110, 0.171);
+    border-right-color: rgba(134, 130, 130, 0.13);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.288);
+}
 
 /* Tranformation general*/
 .transform-img-color:hover {
@@ -102,6 +157,16 @@
 }
 
 /* animations */
+@keyframes blur-in {
+    from {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    to {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
 
 @keyframes revealing_right {
     from {
@@ -119,8 +184,8 @@
 .ani_scroll_in-right {
     animation: revealing_right;
     animation-timeline: view(block);
-    animation-duration: 1s;
-    animation-range: cover 0% cover 40%;
+    animation-duration: 0.5s;
+    animation-range: cover 0% cover 30%;
 }
 
 @keyframes revealing_left {
@@ -128,7 +193,7 @@
         color: gray;
         transform: translateX(-100vw);
         filter: blur(30px);
-        opacity: 0.5;
+        opacity: 0.8;
     }
     to {
         filter: blur(0px);
@@ -138,8 +203,8 @@
 .ani_scroll_in-left {
     animation: revealing_left;
     animation-timeline: view(block);
-    animation-duration: 1s;
-    animation-range: cover 0% cover 40%;
+    animation-duration: 0.5s;
+    animation-range: cover 0% cover 30%;
 }
 
 
@@ -158,8 +223,8 @@
 .ani_scroll_fadein {
     animation: revealing_fadein;
     animation-timeline: view(block);
-    animation-duration: 1s;
-    animation-range: cover 0% cover 40%;
+    animation-duration: 0.5s;
+    animation-range: cover 0% cover 30%;
 }
 
 
