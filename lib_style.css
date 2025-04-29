@@ -118,6 +118,8 @@
     width: 100%;
     height: auto;
 }
+
+
 .mask-border-1{
     mask-image: linear-gradient(black 90%, transparent);
 }
@@ -166,9 +168,9 @@
 
 /* effects background*/
 .bg-glass-dark {
-    background-color: rgba(255, 255, 255, 0.05);
-    background: hsla(0, 1%, 17%, 0.911);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.288);
+    background: rgba(75, 69, 69, 0.664);
+    box-shadow: 0 8px 32px 0 rgba(87, 87, 87, 0.664);
+    border-radius: 10px;
 }
 
 .bg-glass {
@@ -178,10 +180,17 @@
     border-right-color: rgba(134, 130, 130, 0.288);
     border-bottom-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.288);*/
-    background: rgba( 255, 255, 255, 0.2 );
+    
+    /*background: rgba( 255, 255, 255, 0.2 );
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.178);
     backdrop-filter: blur( 8px );
     -webkit-backdrop-filter: blur( 8px );
+    border-radius: 10px;*/
+
+    background: rgba(75, 69, 69, 0.753);
+    box-shadow: 0 8px 32px 0 rgba(87, 87, 87, 0.171);
+    backdrop-filter: blur( 14.5px );
+    -webkit-backdrop-filter: blur( 14.5px );
     border-radius: 10px;
 }
 
