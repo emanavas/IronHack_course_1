@@ -22,24 +22,24 @@
     }
 
     const icons_paths = [
-        '/assets/techs/bootstrap.svg',
-        '/assets/techs/c.svg',
-        '/assets/techs/css3.svg',
-        '/assets/techs/docker.svg',
-        '/assets/techs/expresar-js.svg',
-        '/assets/techs/git.svg',
-        '/assets/techs/html-5.svg',
-        '/assets/techs/jquery.svg', 
-        '/assets/techs/js.svg',
-        '/assets/techs/mongodb.svg',
-        '/assets/techs/mysql.svg',
-        '/assets/techs/ngp.svg',
-        '/assets/techs/nodejs.svg',
-        '/assets/techs/python.svg',
+        'assets/techs/bootstrap.svg',
+        'assets/techs/c.svg',
+        'assets/techs/css3.svg',
+        'assets/techs/docker.svg',
+        'assets/techs/expresar-js.svg',
+        'assets/techs/git.svg',
+        'assets/techs/html-5.svg',
+        'assets/techs/jquery.svg', 
+        'assets/techs/js.svg',
+        'assets/techs/mongodb.svg',
+        'assets/techs/mysql.svg',
+        'assets/techs/ngp.svg',
+        'assets/techs/nodejs.svg',
+        'assets/techs/python.svg',
         // electronics
-        '/assets/techs/kicad.svg',
-        '/assets/techs/arduino.svg',
-        '/assets/techs/altiumdesigner.svg',
+        'assets/techs/kicad.svg',
+        'assets/techs/arduino.svg',
+        'assets/techs/altiumdesigner.svg',
 
     ];
 
