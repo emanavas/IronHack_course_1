@@ -17,8 +17,8 @@
         MIN_SPEED : 0.05,
         MAX_ALPHA : 0.3,
         MIN_ALPHA : 0.2,
-        MAX_SIZE : Math.floor(canvas.width * 0.05),
-        MIN_SIZE : Math.floor(canvas.width * 0.03),
+        MAX_SIZE : Math.floor(canvas.width * 0.055),
+        MIN_SIZE : Math.max(Math.floor(canvas.width * 0.05),60),
     }
 
     const icons_paths = [
