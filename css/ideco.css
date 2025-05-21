@@ -56,7 +56,7 @@
 }
 
 .sec_info_us {
-    background-image: url("./../media/corp_web/imagen-10.jpg");
+    background-image: url("/media/corp_web/imagen-10.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -75,18 +75,28 @@
     }
 }
 .sec_services   {
-    background-image: url("./../media/corp_web/services-bg.jpg");
-    min-height: 100%;
+    background-image: url("/media/corp_web/services-bg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     transition: all 0.3s ease-in-out;
-    overflow: clip;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
     & div:hover {
         & img {
             animation: ani_pop 0.5s ease-in-out 0s 1 forwards;
         }
+    }
+    & div {
+        min-width: 250px;
+        min-height: 250px;
     }
 }
 @keyframes ani_pop {

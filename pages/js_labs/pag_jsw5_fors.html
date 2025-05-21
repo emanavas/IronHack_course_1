@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="/lib_style.css">
+    <link rel="stylesheet" href="/css/porfolio.css">
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="libs/finisher-header.es5.min.js" type="text/javascript"></script>
+
+    <script src="/js/partials.js"></script>
+</head>
+<body>
+
+    <nav class="cnt_nav">
+        <input id="toggle_menu" type="checkbox">
+        <div class="burger_lines">
+            <label id="menu" for ="toggle_menu">
+                <div class="menu_btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </label>    
+        </div>
+        
+        <div id="navbar_content" class="menu_content">
+            <!--here will be added the menu using javascript-->
+        </div>
+    </nav>
+
+    <main class="container  ">
+
+        <div class="cnt_main_general p-1 p-sm-4">
+            
+            <h1 class="text-center padding-30">For Loops</h1>
+            
+            <h3>Exercises</h3><br>
+
+            <div class="">
+                <div class="row"><h4>1. Numbers from 20 to 50</h4></div>
+                <div class="row justify-content-center">
+                    <div class="row border border-black rounded-2">
+                        <div class="col">
+                            Order like:
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary" onclick="orderAsc()">Asc</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary" onclick="orderDesc()">Desc</button>
+                        </div>
+                        <span>Nums:</span>
+                        <div id="n_gen1" class="text-wrap"></div>
+                        <script>
+                            function genData(){
+                                let html_gen1 = '';
+                                let nums = [];
+                                for (let i = 20; i <= 50; i++) {
+                                    nums.push(i);
+                                }
+                                return nums;
+                            }
+                            function orderAsc(){
+                                document.getElementById("n_gen1").innerHTML = genData().join(", ");
+                            }
+                            function orderDesc(){
+                                document.getElementById("n_gen1").innerHTML = genData().reverse().join(", ");
+                            }
+                        </script>
+                    </div>
+                    
+                    
+                </div>
+                <br>
+
+                <div class="row"><h4>2. Even numbers from range</h4></div>
+                <div class="row justify-content-center">
+                    <div class="row border border-black rounded-2 ">
+                        <div class="col">
+                            Range:
+                        </div>
+                        <div class="col">
+                            <span>number from:</span>
+                            <input type="number" id="n_range1" value="50">
+                        </div>
+                        <div class="col">
+                            <span>number to:</span>
+                            <input type="number" id="n_range2" value="100">
+                        </div>
+                        <div class="col align-self-center">
+                            <button class="btn btn-primary" onclick="evenGen()">Generate</button>
+                        </div>
+                        <span>Nums:</span>
+                        <div id="n_gen2" class="text-wrap"></div>
+                        <script>
+                            function genData2(valueFrom, valueTo){
+                                let html_gen1 = '';
+                                let nums = [];
+                                for (let i = valueFrom; i <= valueTo; i++) {
+                                    if(i % 2 == 0) nums.push(i);
+                                }
+                                return nums;
+                            }
+                            function evenGen(){
+                                let v_from = parseInt(document.getElementById("n_range1").value);
+                                let v_to = parseInt(document.getElementById("n_range2").value);
+                                document.getElementById("n_gen2").innerHTML = genData2(v_from, v_to).join(", ");
+                            }
+                        </script>
+                    </div>
+                    
+                    
+                </div>
+                <br>
+
+                <div class="row"><h4>3. Shopping Cart</h4></div>
+                <div class="row justify-content-center">
+                    <div class="row border border-black rounded-2 ">
+                        <h5>Articles:</h6>
+                        
+                        <div class="alert alert-warning" role="alert">
+                            Offer 15% off if you buy more than 100€
+                        </div>
+                        <!--section class="d-grid gap-2">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Item Name</h5>
+                                    <p class="card-text">Description of the item.</p>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Quantity</span>
+                                        <input id="itemA1" type="number" class="form-control" step="any" value="1" aria-label="Number of items to buy">
+                                    </div>
+                                    <button class="btn btn-primary" onclick="addToCart('itemA1')">Add to Cart</button>
+                                </div>
+                            </div>
+                        </section-->
+                        
+                        <section id="productList" class="d-flex flex-wrap gap-2 justify-content-around">
+                            <!-- Product cards will be generated here -->
+
+                        </section>
+                        <div class="row">
+                            <h5>Total Price:</h6>
+                            <h6>Total Description:</h6>
+                            <div id="totalDescr" class="text-wrap"></div>
+                            <h6>Total Price:</h6>
+                            <h5 id="totalPrice" class="text-wrap">0 €</h5>
+
+
+                        </div>
+                        <script>
+                            let product_order = {};
+                            const items = [
+                                { id: 'itemA1', name: 'Item A1', desc: 'Description of Item A1', price: 10 },
+                                { id: 'itemA2', name: 'Item A2', desc: 'Description of Item A2', price: 20 },
+                                { id: 'itemA3', name: 'Item A3', desc: 'Description of Item A3', price: 30 },
+                                { id: 'itemA4', name: 'Item A4', desc: 'Description of Item A4', price: 40 },
+                            ];
+
+                            function cardGen(itemName, itemDesc, itemId, itemPrice){
+                                let html_gen1 = '';
+                                html_gen1 += `<div class="card" style="width: 18rem;">`;
+                                html_gen1 += `<div class="card-body">`;
+                                html_gen1 += `<h5 class="card-title">${itemName}</h5>`;
+                                html_gen1 += `<p class="card-text">${itemDesc}</p>`;
+                                html_gen1 += `<p class="card-text">Price: ${itemPrice} €</p>`;
+                                html_gen1 += `<div class="input-group mb-3">`;
+                                html_gen1 += `<span class="input-group-text">Quantity</span>`;
+                                html_gen1 += `<input id="${itemId}" type="number" class="form-control" step="any" value="1" aria-label="Number of items to buy" min="0">`;
+                                html_gen1 += `</div>`;
+                                html_gen1 += `<button class="btn btn-primary" onclick="addToCart('${itemId}')">Add to Cart</button>`;
+                                html_gen1 += `</div>`;
+                                html_gen1 += `</div>`;
+                                return html_gen1;
+                            }
+                            function loadCards(){
+                                let html_gen1 = '';
+                                for (let i = 0; i < items.length; i++) {
+                                    html_gen1 += cardGen(items[i].name, items[i].desc, items[i].id, items[i].price);
+                                }
+                                document.getElementById("productList").innerHTML = html_gen1;
+                            }
+
+                            // function to remove item from cart
+                            function removeFromCart(itemId){
+                                // check if item exists in the cart
+                                if (!product_order[itemId]) return;
+                                // reduce from the product_order object
+                                product_order[itemId].quantity--;
+                                // if quantity is 0, remove it from the cart
+                                if (product_order[itemId].quantity <= 0) {
+                                    delete product_order[itemId];
+                                }
+                                orderGen();
+                            }
+                            
+                            // function to prepate the html of the order
+                            function orderGen(){
+                                let totalDescr = '';
+                                let totalPrice = 0;
+                                for (let key in product_order) {
+                                    let item = product_order[key];
+                                    totalDescr += `${item.name} x ${item.quantity} = ${item.price * item.quantity} €<br>`;
+                                    //add button to reduce item from cart
+                                    totalDescr += `<button class="btn btn-danger" onclick="removeFromCart('${key}')">Remove 1</button><br>`;
+                                    totalPrice += item.price * item.quantity;
+                                }
+                                // check if total price is greater than 100, apply discount
+                                if (totalPrice >= 100) {
+                                    //show previous total price
+                                    totalDescr += `<span>Previous total: ${totalPrice} €</span><br>`;
+                                    // apply discount
+                                    totalDescr += `<strong>Discount applied!</strong><br>`;
+                                    totalPrice *= 0.85; // apply 15% discount
+                                }
+                                document.getElementById("totalDescr").innerHTML = totalDescr;
+                                document.getElementById("totalPrice").innerHTML = totalPrice + " €";
+                            }
+                            function addToCart(itemId){
+                                let item = items.find(i => i.id === itemId);
+                                // validations
+                                if (!item) return;
+                                let quantity = parseInt(document.getElementById(itemId).value);
+                                if (isNaN(quantity) || quantity <= 0) return;
+                                // check if item already exists in the cart
+                                if (product_order[itemId]) {
+                                    // if it exists, increase the quantity
+                                    product_order[itemId].quantity += quantity;
+                                } else {
+                                    // if it doesn't exist, add it to the cart with quantity 1
+                                    product_order[itemId] = { name: item.name, quantity: quantity, price: item.price };
+                                }
+                                alert(`Added ${quantity} of ${item.name} to cart.`);
+                                // prepare html description of the order
+                                orderGen();
+                            }
+                            loadCards();
+                        </script>
+
+
+                    </div>
+                    
+                    
+                </div>
+                <br>
+
+
+            </div> 
+
+        </div>
+
+        
+        
+    </main>
+
+
+    <script >
+        window.onload = () => {
+            load_into_id("navbar_content", "/partials/nav_main.html");
+        }
+    </script>
+
+</body>
+</html>

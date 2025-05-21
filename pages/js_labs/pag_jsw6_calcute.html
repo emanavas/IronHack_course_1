@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="/lib_style.css">
+    <link rel="stylesheet" href="/css/porfolio.css">
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="libs/finisher-header.es5.min.js" type="text/javascript"></script>
+
+    <script src="/js/partials.js"></script>
+</head>
+<body>
+
+    <nav class="cnt_nav">
+        <input id="toggle_menu" type="checkbox">
+        <div class="burger_lines">
+            <label id="menu" for ="toggle_menu">
+                <div class="menu_btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </label>    
+        </div>
+        
+        <div id="navbar_content" class="menu_content">
+            <!--here will be added the menu using javascript-->
+        </div>
+    </nav>
+
+    <main class="container  ">
+
+        <div class="cnt_main_general p-1 p-sm-4">
+            
+            <h1 class="text-center padding-30">Exercices</h1>
+            
+            <div class="">
+                <div class="row justify-content-center">
+                    <h4>1. Calculator</h4>
+                    <div class="row border border-black rounded-2">
+                        <strong>Enter 2 values to calculate the sum</strong>
+                        <div class="row p-2">
+                            <div class="col">
+                                <span>Value 1:</span>
+                                <input type="number" id="in_value1" class="form-control" placeholder="Enter Value">
+                            </div>
+                            <div class="col">
+                                <span>Value 2:</span>
+                                <input type="number" id="in_value2" class="form-control" placeholder="Enter Value">
+                            </div>
+                        </div>
+                        <!--2 buttons sum and rest -->
+                        <div class="row justify-content-center p-2">
+                            <div class="col-2">
+                                <button id="btn_sum" class="btn btn-primary" onclick="funCalculate('+')">Sum</button>
+                            </div>
+                            <div class="col-2">
+                                <button id="btn_rest" class="btn btn-primary" onclick="funCalculate('-')">Rest</button>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center p-2">
+                            <div class="col-2">
+                                <span id="out_result" class="form-control">Result</span>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        function funCalculate(operator){
+                            let value1 = parseFloat(document.getElementById("in_value1").value);
+                            let value2 = parseFloat(document.getElementById("in_value2").value);
+                            let result = 0;
+                            
+                            if (operator == '+') {
+                                result = value1 + value2;
+                            } else if (operator == '-') {
+                                result = value1 - value2;
+                            }
+                            
+                            document.getElementById("out_result").innerText = 'Result: ' + result;
+                        }
+                    </script>
+                </div>
+                <br>
+
+
+
+
+
+            </div> 
+
+        </div>
+
+        
+        
+    </main>
+
+
+    <script >
+        window.onload = () => {
+            load_into_id("navbar_content", "/partials/nav_main.html");
+        }
+    </script>
+
+</body>
+</html>

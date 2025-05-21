@@ -17,7 +17,7 @@
         MIN_SPEED : 0.05,
         MAX_ALPHA : 0.3,
         MIN_ALPHA : 0.2,
-        MAX_SIZE : Math.floor(canvas.width * 0.055),
+        MAX_SIZE : Math.min(Math.floor(canvas.width * 0.055),80),
         MIN_SIZE : Math.max(Math.floor(canvas.width * 0.05),60),
     }
 
@@ -136,4 +136,4 @@
     //setInterval(drawDots, 16);
     iniIcons();
     // call the drawIcons function to draw the icons on the canvas
-    setInterval( moveIcons, 5);
+    setInterval( moveIcons, 1);

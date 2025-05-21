@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="/lib_style.css">
+    <link rel="stylesheet" href="/css/porfolio.css">
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--awesome font -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    
+    <script src="/js/partials.js"></script>
+</head>
+<body>
+
+    <nav class="cnt_nav">
+        <input id="toggle_menu" type="checkbox">
+        <div class="burger_lines">
+            <label id="menu" for ="toggle_menu">
+                <div class="menu_btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </label>    
+        </div>
+        
+        <div id="navbar_content" class="menu_content">
+            <!--here will be added the menu using javascript-->
+        </div>
+    </nav>
+
+    <main class="container  ">
+
+        <div class="cnt_main_general p-1 p-sm-4">
+            
+            <h1 class="text-center padding-30">Exercices</h1>
+            
+            <div class="">
+                <div class="row justify-content-center">
+                    <h4>1. Calculate your properly weigth</h4>
+                    <div class="row border border-black rounded-2">
+                        <strong>please enter your height and weight</strong>
+                        <div class="row p-2">
+                            <div class="col">
+                                <span>height:[meters]</span>
+                                <input type="number" id="in_height" class="form-control" placeholder="Enter height">
+                            </div>
+                            <div class="col">
+                                <span>weight:[kg]</span>
+                                <input type="number" id="in_weight" class="form-control" placeholder="Enter weight">
+                            </div>
+                        </div>
+                        <!--2 buttons sum and rest -->
+                        <div class="row justify-content-center p-2">
+                            <div class="col-2">
+                                <button class="btn btn-primary" onclick="funCalculate()">Calculate</button>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center p-2">
+                            <div class="col-2">
+                                <span id="out_result1" class="form-control">Result</span>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        function funCalculate(){
+                            let height = parseFloat(document.getElementById("in_height").value);
+                            let weight = parseFloat(document.getElementById("in_weight").value);
+                            let result = 0;
+
+                            // calculate the properly weight
+                            result = weight / (height * height);
+                            if(result < 18.5){
+                                result = "Underweight";
+                            }else if(result >= 18.5 && result < 24.9){
+                                result = "Normal weight";
+                            }else if(result >= 25 && result < 29.9){
+                                result = "Overweight";
+                            }else{
+                                result = "Obesity";
+                            }
+                            
+                            
+                            document.getElementById("out_result1").innerText = 'Result: ' + result;
+                        }
+                    </script>
+                </div>
+                <br>
+                
+                <div class="row justify-content-center">
+                    <h4>2. Cinema</h4>
+                    <div class="row border border-black rounded-2">
+                        <strong>Welcome to Cinema Virtual Paradise: Select movie and seat to book your tickets.</strong>
+                        <div class="row p-2">
+                            <div class="col">
+                                <span>Movie:</span>
+                                <select id="in_movie" class="form-select" aria-label="Default select example">
+                                    <option selected>Select a movie</option>
+                                    <option value="1">Avatar</option>
+                                    <option value="2">Titanic</option>
+                                    <option value="3">Star Wars</option>
+                                    <option value="4">Harry Potter</option>
+                                </select>
+                            </div>
+                            <!-- select session -->
+                            <div class="col">
+                                <span>Session:</span>
+                                <select id="in_session" class="form-select" aria-label="Default select example">
+                                    <option selected>Select a session</option>
+                                    <option value="4">16:00</option>
+                                    <option value="5">19:00</option>
+                                    <option value="6">21:00</option>
+                                </select>
+                            </div>
+                            <div class="row p-2">
+                                <span>Seat:</span>
+                                <!-- div simulate the screen film-->
+                                <div class="row justify-content-center p-2">
+                                    <div class="col-6 text-center bg-black rounded-2">
+                                        <div class="screen color-white">Screen</div>
+                                    </div>
+                                </div>
+                                <!--grafic selector of seat using grid-->
+                                <div id="seat_selector" class="row p-2 d-grid gap-2 grid-template-columns-10 grid-template-rows-10">
+                                    <!-- here will be added the seats using javascript-->
+                                </div>
+                                <!--show cost-->
+                                <div class="row justify-content-center p-2">
+                                    <div class="col-2">
+                                        <span class="form-control">Cost: 10€</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--show list of selected seats-->
+                            <div class="row justify-content-center p-2">
+                                <div class="col-2">
+                                    <span id="out_seats" class="form-control">Selected Seats</span>
+                                </div>
+                            </div>
+                            <!-- calculate cost -->
+                            <div class="row justify-content-center p-2">
+                                <div class="col-2">
+                                    <span id="out_cost" class="form-control">Total Cost</span>
+                                </div>
+                            </div>
+                            <!--book button-->
+                            <div class="row justify-content-center p-2">
+                                <div class="col-2">
+                                    <button id="btn_book" class="btn btn-primary" onclick="funBook()">Book</button>
+                                </div>
+                            </div>
+                            <!-- show entry to print-->
+                            <!--show all the book information in a nice way-->
+                            <div id="out_ticket" class="row justify-content-center p-2">
+                                
+
+                            </di    v>
+                        </div>
+                        
+                        
+                        
+                        <script>
+                            function generateEntry(movie, session, seat, cost) {
+                                const timestamp = new Date().getTime() + Math.floor(Math.random() * 1000);
+                                const ticketTemplate = `
+                                    <style>
+                                        .ticket {
+                                        max-width: 400px;
+                                        border: 2px dashed #dee2e6;
+                                        border-radius: 10px;
+                                        overflow: hidden;
+                                        }
+                                        .ticket-header {
+                                        background-color: #0d6efd;
+                                        color: white;
+                                        padding: 15px;
+                                        }
+                                        .ticket-body {
+                                        padding: 20px;
+                                        }
+                                        .ticket-divider {
+                                        border-top: 2px dashed #dee2e6;
+                                        margin: 15px 0;
+                                        }
+                                        .ticket-qr {
+                                        background-color: #f8f9fa;
+                                        padding: 15px;
+                                        text-align: center;
+                                        }
+                                    </style>
+                                    <div id="ticket-${timestamp}" class="ticket mx-auto shadow-sm">
+                                        <div class="ticket-header text-center">
+                                        <h2 class="mb-0"><i class="fas fa-ticket-alt me-2"></i>MOVIE TICKET</h2>
+                                        </div>
+                                        <div class="ticket-body">
+                                            <div class="row mb-3">
+                                                <div class="col-6">
+                                                <h5 class="text-muted">Movie</h5>
+                                                <h4 class="fw-bold">${movie}</h4>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                <h5 class="text-muted">Date</h5>
+                                                <h4 class="fw-bold">${new Date().toLocaleDateString()}</h4>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row mb-3">
+                                                <div class="col-6">
+                                                <h5 class="text-muted">Session</h5>
+                                                <h4 class="fw-bold">${session}</h4>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                <h5 class="text-muted">Hall</h5>
+                                                <h4 class="fw-bold">3</h4>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="ticket-divider"></div>
+                                            
+                                            <div class="row mb-3">
+                                                <div class="col-6">
+                                                <h5 class="text-muted">Seat</h5>
+                                                <h4 class="fw-bold">${seat}</h4>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                <h5 class="text-muted">Price</h5>
+                                                <h4 class="fw-bold">${cost}€</h4>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="ticket-divider"></div>
+                                            
+                                            <div class="ticket-qr">
+                                                <div class="mb-2"><i class="fas fa-qrcode fa-5x text-dark"></i></div>
+                                                <small class="text-muted">Scan this code at the entrance</small>
+                                                <button class="btn btn-primary mt-2" onclick="printTicket('ticket-${timestamp}')">Print</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                                return ticketTemplate;
+                            }
+                            
+                            // create a grid of 10x10 seats
+                            let seat_selected_id = []
+                            const cost = 10;
+                            const seat_selector = document.getElementById("seat_selector");
+                            // map the variable number to letters
+                            const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+                             // create a HSL color array with 10 colors changing the saturation
+                            function getHSLArray(colorBase, length = 10) {
+                                // create a HSL color array with 10 colors changing the saturation
+                                let hslArray = [];
+                                // calculate length of the array
+                                const step = Math.floor(20 / length);
+                                
+                                for (let i = 40; i > 20; i-=step) {
+                                    hslArray.push(`hsl(${colorBase}, 100%, ${i}%)`);
+                                }
+                                return hslArray;
+                            }
+                            function printTicket(ticketId) {
+                                console.log("Ticket:", ticketId);
+                                const printContents = document.getElementById(ticketId).innerHTML;
+                                let originalContents = document.body.innerHTML;
+                                document.body.innerHTML = printContents;
+                                window.print();
+                                document.body.innerHTML = originalContents;
+
+                            }
+                            // create a function to get random color for each row
+                            const row_color = getHSLArray(170);
+                            // create the seats
+                            for (let i = 0; i < 10; i++) {
+                                let row = document.createElement("div");
+                                row.className = "row";
+                                for (let j = 1; j <= 10; j++) {
+                                    let col = document.createElement("div");
+                                    col.className = "col";
+                                    // create a toogle button with id and class
+                                    let button = document.createElement("button");
+                                    button.style.backgroundColor = row_color[i];
+                                    button.className = "btn btn-primary col-1 w-100";
+                                    button.id = "seat_" + letters[i] + j;
+                                    button.innerText = letters[i] + j;
+                                    button.setAttribute("type", "button");
+                                    button.setAttribute("data-bs-toggle", "button");
+
+
+                                    col.appendChild(button);
+                                    // add event listener to the button
+                                    button.onclick = function() {
+                                        // change the color of the button to red
+                                        if (button.getAttribute("aria-disabled") == "True") return;
+                                        if (button.style.backgroundColor == "red") {
+                                            button.style.backgroundColor = row_color[i];
+                                            button.setAttribute("seat_selected", "False");
+                                            // remove the id from the array
+                                            seat_selected_id.splice(seat_selected_id.indexOf(button.id), 1);
+                                        } else {
+                                            button.style.backgroundColor = "red";
+                                            seat_selected_id.push(button.id);
+                                            button.setAttribute("seat_selected", "True");
+                                        }
+                                        // show the selected seats
+                                        let selected_seats = seat_selected_id.map((seat) => {
+                                            return seat.replace("seat_", "");
+                                        });
+                                        // show seat and cost
+                                        document.getElementById("out_seats").innerText = 'Selected Seats: ' + selected_seats.join(", ");
+                                        document.getElementById("out_cost").innerText = 'Total Cost: ' + (selected_seats.length * cost) + "€";
+                                    };
+                                    button.onmouseover = function() {
+                                        // change the color of the button to red
+                                        if (button.getAttribute("aria-disabled") == "True") button.style.cursor = "no-drop";
+                                    };
+                                    row.appendChild(col);
+                                }
+                                seat_selector.appendChild(row);
+                            }
+
+                            // random select a seat
+                            function randomSelectSeat(seats = 10) {
+                                // get all the buttons
+                                let buttons = document.querySelectorAll("#seat_selector button");
+                                // select seats randomly
+                                for (let i = 0; i < seats; i++) {
+                                    // get a random number between 0 and 99
+                                    let randomNumber = Math.floor(Math.random() * buttons.length);
+                                    // select the button
+                                    let button = buttons[randomNumber];
+                                    // change the color of the button to red
+                                    button.style.backgroundColor = "gray";
+                                    button.setAttribute("aria-disabled", "True");
+                                    
+                                }
+                            }
+                            randomSelectSeat();
+                            // book the seats
+                            function funBook() {
+                                // check if the movie and session are selected
+                                let movie = document.getElementById("in_movie").value;
+                                let session = document.getElementById("in_session").value;
+                                if (movie == "Select a movie" || session == "Select a session") {
+                                    alert("Please select a movie and a session");
+                                    return;
+                                }
+                                // check if there are seats selected
+                                if (seat_selected_id.length == 0) {
+                                    alert("Please select at least one seat");
+                                    return;
+                                }
+                                // show the selected seats
+                                let selected_seats = seat_selected_id.map((seat) => {
+                                    return seat.replace("seat_", "");
+                                });
+                                // show all the tickets by seat
+                                for (let i = 0; i < seat_selected_id.length; i++) {
+                                    let seat = seat_selected_id[i].replace("seat_", "");
+                                    //get the movie name
+                                    let movie_name = document.getElementById("in_movie").options[document.getElementById("in_movie").selectedIndex].text;
+                                    //get the session name
+                                    let session_name = document.getElementById("in_session").options[document.getElementById("in_session").selectedIndex].text;
+                                    let ticket = generateEntry(movie_name, session_name, seat, cost);
+                                    // add the ticket to the div
+                                    let out_ticket = document.getElementById("out_ticket");
+                                    out_ticket.innerHTML += ticket;
+                                }
+
+                                // disable selected seats from grid
+                                for (let i = 0; i < seat_selected_id.length; i++) {
+                                    let button = document.getElementById(seat_selected_id[i]);
+                                    button.style.backgroundColor = "gray";
+                                    button.setAttribute("aria-disabled", "True");
+                                    button.setAttribute("seat_selected", "False");
+
+                                }
+                                // clear the selected seats
+                                seat_selected_id = [];
+                                
+                            }
+                        </script>
+                </div>
+
+
+
+
+            </div> 
+
+        </div>
+
+        
+        
+    </main>
+
+
+    <script >
+        window.onload = () => {
+            load_into_id("navbar_content", "/partials/nav_main.html");
+        }
+    </script>
+
+</body>
+</html>

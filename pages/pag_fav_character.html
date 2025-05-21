@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./../style.css">
-    <link rel="stylesheet" type="text/css" href="./../lib_style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/lib_style.css">
 
     <!-- Add favicon--> 
-    <link rel="icon" type="image/x-icon" href="./../assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <script src="/js/partials.js"></script>
 </head>
 <body>
 
@@ -24,142 +25,119 @@
             </label>    
         </div>
         
-        <div class="menu_content">
-            <div class="menu_items">
-                <div class="menu_item">
-                    <a href="./../index.html">Home</a>
-                </div>
-                <div class="menu_item">
-                    <a href="./pag2.html">Info</a>
-                </div>
-                <div class="menu_item">
-                    <a href="./pag3.html">Career</a>
-                </div>
-                <div class="menu_item">
-                    <a href="./pag4.html">About me</a>
-                </div>
-                <div>
-                    <ul>
-                        <div class="menu_item_title">Trainnig lab IronHack</div>
-                        <li class="menu_item"><a href="./pag_noticiero.html">web news</a></li>
-                        <li class="menu_item"><a href="./pag_game_boom_hover.html">Game Boom hover</a></li>
-                        <li class="menu_item"><a href="./pag_fav_character.html">Favorite character</a></li>
-                        <li class="menu_item"><a href="./pag_bootstrap_holy_grail.html">Bootstrap Holy Grail</a></li>
-                        <li class="menu_item"><a href="./pag_mini_tests.html">Mini Tests</a></li>
-                        <li class="menu_item"><a href="./pag_corp_web.html">Corporative web</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div id="navbar_content" class="menu_content">
+            <!--here will be added the menu using javascript-->
         </div>
     </nav>
 
-    <main class=" ">
-        <h1 class="text-center padding-30 color-white">My favorite characters</h1>
-        <div class="cnt_char_main">
-            <div class="cnt_char_main_1">
-                <!-- card of characters -->
-                <div class="cnt_char" style="--id:-5">
-                        <div class="cnt_char_card" style="--char: 'Inspector Gadget'">
+    <main>
+        <div class="cnt_main_general">
+            <h1 class="text-center padding-30">My favorite characters</h1>
+            <div class="cnt_char_main">
+                <div class="cnt_char_main_1">
+                    <!-- card of characters -->
+                    <div class="cnt_char" style="--id:-5">
+                            <div class="cnt_char_card" style="--char: 'Inspector Gadget'">
+                                <div class="cnt_char_body">
+                                    <div class="cnt_char_gb" style="--background: url('/media/inspGadget_wait.jpg')"></div>
+                                    <div class="cnt_char_team">
+                                        <img src="/media/inspGadget_text.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="cnt_char_popup" >
+                                    <img src="/media/inspGadget_sel.png" alt="">
+                                </div>
+                            </div>
+                    </div>
+
+                    
+                    <div class="cnt_char" style="--id:-3">
+                        <div class="cnt_char_card" style="--char: 'Kirby'">
                             <div class="cnt_char_body">
-                                <div class="cnt_char_gb" style="--background: url('./media/inspGadget_wait.jpg')"></div>
+                                <div class="cnt_char_gb" style="--background: url('/media/kirby_wait.jpg')"></div>
                                 <div class="cnt_char_team">
-                                    <img src="./../media/inspGadget_text.png" alt="">
+                                    <img src="/media/kirby_text.png" alt="">
                                 </div>
                             </div>
                             <div class="cnt_char_popup" >
-                                <img src="./../media/inspGadget_sel.png" alt="">
+                                <img src="/media/kirby_sel.png" alt="">
                             </div>
                         </div>
-                </div>
+                    </div>
+                    
+                    
+                    <div class="cnt_char" style="--id:-1">
+                        <div class="cnt_char_card" style="--char: 'Link'">
+                            <div class="cnt_char_body">
+                                <div class="cnt_char_gb" style="--background: url('/media/link_wait.png')"></div>
+                                <div class="cnt_char_team">
+                                    <img src="/media/link_text.png" alt="">
+                                </div>
+                            </div>
+                            <div class="cnt_char_popup" >
+                                <img src="/media/link_sel.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cnt_char" style="--id:1">
+                        <div class="cnt_char_card" style="--char: 'Mario'">
+                            <div class="cnt_char_body">
+                                <div class="cnt_char_gb" style="--background: url('/media/mario_wait.jpg')"></div>
+                                <div class="cnt_char_team">
+                                    <img src="/media/mario_text.png" alt="">
+                                </div>
+                            </div>
+                            <div class="cnt_char_popup" >
+                                <img src="/media/mario_sel.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cnt_char" style="--id:3">
+                        <div class="cnt_char_card" style="--char: 'Samus'">
+                            <div class="cnt_char_body">
+                                <div class="cnt_char_gb" style="--background: url('/media/samus_wait.jpg')"></div>
+                                <div class="cnt_char_team">
+                                    <img src="/media/samus_text.png" alt="">
+                                </div>
+                            </div>
+                            <div class="cnt_char_popup" >
+                                <img src="/media/samus_sel.png" alt="">
+                            </div>
+                        </div>
+                    </div>
 
-                
-                <div class="cnt_char" style="--id:-3">
-                    <div class="cnt_char_card" style="--char: 'Kirby'">
-                        <div class="cnt_char_body">
-                            <div class="cnt_char_gb" style="--background: url('./media/kirby_wait.jpg')"></div>
-                            <div class="cnt_char_team">
-                                <img src="./../media/kirby_text.png" alt="">
+                    <div class="cnt_char" style="--id:5">
+                        <div class="cnt_char_card" style="--char: 'Pikachu'">
+                            <div class="cnt_char_body">
+                                <div class="cnt_char_gb" style="--background: url('/media/pikachu_wait.png')"></div>
+                                <div class="cnt_char_team">
+                                    <img src="/media/pikachu_text.png" alt="">
+                                </div>
+                            </div>
+                            <div class="cnt_char_popup" >
+                                <img src="/media/pikachu_sel.png" alt="">
                             </div>
                         </div>
-                        <div class="cnt_char_popup" >
-                            <img src="./../media/kirby_sel.png" alt="">
-                        </div>
                     </div>
-                </div>
-                
-                
-                <div class="cnt_char" style="--id:-1">
-                    <div class="cnt_char_card" style="--char: 'Link'">
-                        <div class="cnt_char_body">
-                            <div class="cnt_char_gb" style="--background: url('./media/link_wait.png')"></div>
-                            <div class="cnt_char_team">
-                                <img src="./../media/link_text.png" alt="">
-                            </div>
-                        </div>
-                        <div class="cnt_char_popup" >
-                            <img src="./../media/link_sel.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cnt_char" style="--id:1">
-                    <div class="cnt_char_card" style="--char: 'Mario'">
-                        <div class="cnt_char_body">
-                            <div class="cnt_char_gb" style="--background: url('./media/mario_wait.jpg')"></div>
-                            <div class="cnt_char_team">
-                                <img src="./../media/mario_text.png" alt="">
-                            </div>
-                        </div>
-                        <div class="cnt_char_popup" >
-                            <img src="./../media/mario_sel.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cnt_char" style="--id:3">
-                    <div class="cnt_char_card" style="--char: 'Samus'">
-                        <div class="cnt_char_body">
-                            <div class="cnt_char_gb" style="--background: url('./media/samus_wait.jpg')"></div>
-                            <div class="cnt_char_team">
-                                <img src="./../media/samus_text.png" alt="">
-                            </div>
-                        </div>
-                        <div class="cnt_char_popup" >
-                            <img src="./../media/samus_sel.png" alt="">
-                        </div>
-                    </div>
-                </div>
+                    
+                    
 
-                <div class="cnt_char" style="--id:5">
-                    <div class="cnt_char_card" style="--char: 'Pikachu'">
-                        <div class="cnt_char_body">
-                            <div class="cnt_char_gb" style="--background: url('./media/pikachu_wait.png')"></div>
-                            <div class="cnt_char_team">
-                                <img src="./../media/pikachu_text.png" alt="">
-                            </div>
-                        </div>
-                        <div class="cnt_char_popup" >
-                            <img src="./../media/pikachu_sel.png" alt="">
-                        </div>
-                    </div>
                 </div>
-                
-                
+            </div>
+            <div class="cnt_char_main">
 
             </div>
         </div>
-        <div class="cnt_char_main">
 
-        </div>
-            
-        
     </main>
     
-    <animated_bg>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </animated_bg>
+    <script >
+        window.onload = () => {
+            load_into_id("navbar_content", "/partials/nav_main.html");
+        }
+    </script>
 
 </body>
 </html>

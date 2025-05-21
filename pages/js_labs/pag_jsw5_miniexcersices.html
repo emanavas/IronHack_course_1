@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="/lib_style.css">
+    <link rel="stylesheet" href="/css/porfolio.css">
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="libs/finisher-header.es5.min.js" type="text/javascript"></script>
+
+    <script src="/js/partials.js"></script>
+</head>
+<body>
+
+    <nav class="cnt_nav">
+        <input id="toggle_menu" type="checkbox">
+        <div class="burger_lines">
+            <label id="menu" for ="toggle_menu">
+                <div class="menu_btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </label>    
+        </div>
+        
+        <div id="navbar_content" class="menu_content">
+            <!--here will be added the menu using javascript-->
+        </div>
+    </nav>
+
+    <main class="container  ">
+
+        <div class="cnt_main_general p-1 p-sm-4">
+            
+            <h1 class="text-center padding-30">Games Math.Ramdom</h1>
+            
+            <div class="">
+                <div class="row justify-content-center">
+                    <h4>1.Rest values</h4>
+                    <div class="row border border-black rounded-2">
+                        <strong>Enter 2 values to rest and get result</strong>
+                        <div class="row">
+                            <div class="col">
+                                <span>Value 1:</span>
+                                <input type="number" id="in_value1" class="form-control" placeholder="Enter Value">
+                            </div>
+                            <div class="col">
+                                <span>Value 2:</span>
+                                <input type="number" id="in_value2" class="form-control" placeholder="Enter Value">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-primary" onclick="funRest()">Rest</button>
+                            </div>
+                            <div class="col align-self-center">
+                                <span id="rest_res"></span>
+                            </div>
+                        </div>
+
+                        <script>
+                            function funRest() {
+                                let value1 = parseInt(document.getElementById("in_value1").value);
+                                let value2 = parseInt(document.getElementById("in_value2").value);
+                                // Check if the values are numbers
+                                if (isNaN(value1) || isNaN(value2)) {
+                                    document.getElementById("rest_res").innerHTML = "Please enter valid numbers.";
+                                    return;
+                                }
+                                // Perform the subtraction
+                                let result = value1 - value2;
+                                document.getElementById("rest_res").innerHTML = "Result: " + result;
+                            }
+                        </script>
+                    </div>
+                    
+                    <h4>2.About you</h4>
+                    <div class="row border border-black rounded-2">
+                        <strong>Fill the form to know more about you</strong>
+                        <br><br>
+                        <div class="row">
+                            <div class="col">
+                                <span>Enter your name:</span>
+                                <input type="text" id="in_name" class="form-control" placeholder="Enter Name">
+                            </div>
+                            
+                            <!--place you live-->
+                            <div class="col">
+                                <span>Enter your place:</span>
+                                <input type="text" id="in_place" class="form-control" placeholder="Enter Place">
+                            </div>
+                            <!--talk abput you hobbies-->
+                            <div class="col">
+                                <span>Enter your hobbies:</span>
+                                <input type="text" id="in_hobbies" class="form-control" placeholder="Enter Hobbies">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-primary" onclick="saludar()">Saludar</button>
+                            </div>
+                        </div>
+                        
+                        <script>
+                            //retrive a saludation message
+                            function saludar() {
+                                let name = document.getElementById("in_name").value;
+                                let place = document.getElementById("in_place").value;
+                                let hobbies = document.getElementById("in_hobbies").value;
+                                
+                                // Check if the values are empty
+                                if (name === "" || place === "" || hobbies === "") {
+                                    alert("Please fill in all fields.");
+                                    return;
+                                }
+                                
+                                // Create the message
+                                let message = "Hello " + name + "! You live in " + place + " and your hobbies are: " + hobbies + ".";
+                                
+                                // Display the message in an alert box
+                                alert(message);
+                            }
+                        </script>
+                    </div>
+                    
+                </div>
+                <br>
+
+
+                <div class="row justify-content-center">
+                    <h4>3. Calculare area of circle</h4>
+                    <div class="row border border-black rounded-2">
+                        <strong>Enter the radius to calculate the area of a circle</strong>
+                        <div class="row">
+                            <div class="col">
+                                <span>Enter the radius:</span>
+                                <input type="number" id="in_radius" class="form-control" placeholder="Enter Radius">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-primary" onclick="calculateArea()">Calculate Area</button>
+                            </div>
+                            <div class="col align-self-center">
+                                <span id="area_res"></span>
+                            </div>
+                        </div>
+
+                        <script>
+                            function calculateArea() {
+                                let radius = parseFloat(document.getElementById("in_radius").value);
+                                // Check if the value is a number
+                                if (isNaN(radius)) {
+                                    document.getElementById("area_res").innerHTML = "Please enter a valid number.";
+                                    return;
+                                }
+                                // Calculate the area of the circle
+                                let area = Math.PI * Math.pow(radius, 2);
+                                document.getElementById("area_res").innerHTML = "Area: " + area.toFixed(2);
+                            }
+                        </script>
+                    </div>
+                </div>
+                <br>
+
+
+
+
+
+
+            </div> 
+
+        </div>
+
+        
+        
+    </main>
+
+
+    <script >
+        window.onload = () => {
+            load_into_id("navbar_content", "/partials/nav_main.html");
+        }
+    </script>
+
+</body>
+</html>

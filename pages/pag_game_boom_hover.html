@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./../style.css">
-    <link rel="stylesheet" type="text/css" href="./../lib_style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/lib_style.css">
 
     <!-- Add favicon--> 
-    <link rel="icon" type="image/x-icon" href="./../assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/libs/finisher-header.es5.min.js" type="text/javascript"></script>
+
+    <!-- add partials-->
+    <script src="/js/partials.js"></script>
 </head>
 <body>
 
@@ -24,77 +32,55 @@
             </label>    
         </div>
         
-        <div class="menu_content">
-            <div class="menu_items">
-                <div class="menu_item">
-                    <a href="./../index.html">Home</a>
-                </div>
-                <div class="menu_item">
-                    <a href="./pag2.html">Info</a>
-                </div>
-                <div class="menu_item">
-                    <a href="./pag3.html">Career</a>
-                </div>
-                <div class="menu_item">
-                    <a href="./pag4.html">About me</a>
-                </div>
-                <div>
-                    <ul>
-                        <div class="menu_item_title">Trainnig lab IronHack</div>
-                        <li class="menu_item"><a href="./pag_noticiero.html">web news</a></li>
-                        <li class="menu_item"><a href="./pag_game_boom_hover.html">Game Boom hover</a></li>
-                        <li class="menu_item"><a href="./pag_fav_character.html">Favorite character</a></li>
-                        <li class="menu_item"><a href="./pag_bootstrap_holy_grail.html">Bootstrap Holy Grail</a></li>
-                        <li class="menu_item"><a href="./pag_mini_tests.html">Mini Tests</a></li>
-                        <li class="menu_item"><a href="./pag_corp_web.html">Corporative web</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div id="navbar_content" class="menu_content">
+            <!--here will be added the menu using javascript-->
         </div>
     </nav>
 
-    <main class="cnt_main_general ">
-        <h1 class="text-center padding-30">Favorite character</h1>
-        <h3 class="text-center padding-10">Hover over images, to enjoy your favorite character</h3>
-        <div class="cnt_game_boom_hover">
-            <div>
-                <picture></picture>
-            </div>
-            <div>
-                <picture></picture>
-            </div>
-            <div>
-                <picture></picture>
-            </div>
-            <div>
-                <picture></picture>
-            </div>
-            <div>
-                <picture></picture>
-            </div>
-            <div>
-                <picture></picture>
-            </div>
-            <div>
-                <picture></picture>
-            </div>
-            <div>
-                <picture></picture>
-            </div>
-            <div>
-                <picture></picture>
+    <main class="container">
+        <div class="cnt_main_general">
+            <h1 class="text-center padding-30">Favorite character</h1>
+            <h3 class="text-center padding-10">Hover over images, to enjoy your favorite character</h3>
+            <div class="cnt_game_boom_hover">
+                <div>
+                    <picture></picture>
+                </div>
+                <div>
+                    <picture></picture>
+                </div>
+                <div>
+                    <picture></picture>
+                </div>
+                <div>
+                    <picture></picture>
+                </div>
+                <div>
+                    <picture></picture>
+                </div>
+                <div>
+                    <picture></picture>
+                </div>
+                <div>
+                    <picture></picture>
+                </div>
+                <div>
+                    <picture></picture>
+                </div>
+                <div>
+                    <picture></picture>
+                </div>
             </div>
         </div>
+        
 
         
         
     </main>
-    
-    <animated_bg>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </animated_bg>
+    <script >
+        window.onload = () => {
+            load_into_id("navbar_content", "/partials/nav_main.html");
+        }
+    </script>
 
 </body>
 </html>

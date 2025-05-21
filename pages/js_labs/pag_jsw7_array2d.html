@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="/lib_style.css">
+    <link rel="stylesheet" href="/css/porfolio.css">
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="libs/finisher-header.es5.min.js" type="text/javascript"></script>
+
+    <script src="/js/partials.js"></script>
+</head>
+<body>
+
+    <nav class="cnt_nav">
+        <input id="toggle_menu" type="checkbox">
+        <div class="burger_lines">
+            <label id="menu" for ="toggle_menu">
+                <div class="menu_btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </label>    
+        </div>
+        
+        <div id="navbar_content" class="menu_content">
+            <!--here will be added the menu using javascript-->
+        </div>
+    </nav>
+
+    <main class="container  ">
+
+        <div class="cnt_main_general p-1 p-sm-4">
+            
+            <h1 class="text-center padding-30">Exercices</h1>
+            
+            <div class="">
+                <div class="row justify-content-center">
+                    <h4>1. Array multidimensional</h4>
+                    <div class="row border border-black rounded-2">
+                        <strong>Array 1 is:</strong>
+                        <span> [[175, 134], 165, [80, 187, [73, 26], 92]]</span>
+                        <strong>Array 2 is:</strong>
+                        <span>[["Kitty", "Toby", "Didi"], ["Pedro", "Jose", "Roberto"], ["Carla", "Rosa", "Julieta"]]</span>
+                    </div>
+                    <!--result of filter number 26, 134, and 92-->
+                    <div class="row border border-black rounded-2">
+                        <div id="result_1" class="col-12 col-sm-6">
+                            <strong>Result of filter number 26, 134, and 92:</strong>
+                            <span id="result_1_span"></span>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <strong>Result of filter names:</strong>
+                            <span id="result_2_span"></span>
+                        </div>
+                    </div>
+                    <script>
+                        const medidas = [[175, 134], 165, [80, 187, [73, 26], 92]];
+                        const nombres = [["Kitty", "Toby", "Didi"], ["Pedro", "Jose", "Roberto"], ["Carla", "Rosa", "Julieta"]];
+
+                        //find index of 26, 134, and 92 alternative way using recursive function
+                        function findIndex(arr, value) {
+                            for (let i = 0; i < arr.length; i++) {
+                                if (Array.isArray(arr[i])) {
+                                    const result = findIndex(arr[i], value);
+                                    if (result !== -1) {
+                                        return [i, ...result];
+                                    }
+                                } else if (arr[i] === value) {
+                                    return [i];
+                                }
+                            }
+                            return -1;
+                        }
+
+                        //find index of 26, 134, and 92
+                        const result_1 = medidas.flat(2).filter((item) => item === 26 || item === 134 || item === 92);
+                        console.log(result_1);
+                        let result_1_span = document.getElementById("result_1_span");
+                        result_1_span.innerHTML = result_1;                        
+                        const index_26 = findIndex(medidas, 26);
+                        console.log("Index of 26:", index_26);
+                        const index_134 = findIndex(medidas, 134);
+                        console.log("Index of 134:", index_134);
+                        const index_92 = findIndex(medidas, 92);
+                        console.log("Index of 92:", index_92);
+                        result_1_span.innerHTML += `<br>Index of 26: [${index_26}]`;
+                        result_1_span.innerHTML += `<br>Index of 134: [${index_134}]`;
+                        result_1_span.innerHTML += `<br>Index of 92: [${index_92}]`;
+
+
+
+                        //find names  Rosa and Roberto
+                        const result_2 = nombres.flat(2).filter((item) => item === "Rosa" || item === "Roberto");
+                        console.log(result_2);
+                        document.getElementById("result_2_span").innerHTML = result_2;
+                        const index_Rosa = findIndex(nombres, "Rosa");
+                        console.log("Index of Rosa:", index_Rosa);
+                        const index_Roberto = findIndex(nombres, "Roberto");
+                        console.log("Index of Roberto:", index_Roberto);
+                        document.getElementById("result_2_span").innerHTML += `<br>Index of Rosa: [${index_Rosa}]`;
+                        document.getElementById("result_2_span").innerHTML += `<br>Index of Roberto: [${index_Roberto}]`;
+                    
+                    </script>
+                </div>
+                <br>
+
+
+
+
+
+            </div> 
+
+        </div>
+
+        
+        
+    </main>
+
+
+    <script >
+        window.onload = () => {
+            load_into_id("navbar_content", "/partials/nav_main.html");
+        }
+    </script>
+
+</body>
+</html>
